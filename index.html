@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tic-Tac-Toe</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <script src="script.js"></script>
+
+  <h1>TIC-TAC-TOE</h1>
+	<div id="setPlayerContainer"><!--For choosing the player and also shows which player's turn it is-->
+		<p id="choosePlayerText">Choose your player:</p>
+		<p id="chooseTurnText" style="display: none;"></p><!--After choosing the player (XorO) the player can choose to either be the first or second to make their move-->
+		
+    <div id="forPlayerOptions"><!--Will disappear after the user chooses their player-->
+      <button class="setPlayerClass" id="playerX">X</button>
+      <button class="setPlayerClass" id="playerO">O</button>
+		</div>
+
+		<div id="choosePlayer1buttons">
+			<button id="buttonYes" style="display: none;">Yes</button>
+			<button id="buttonNo" style="display: none;">No</button>
+		</div>
+    
+  	<p id="takeTurnText" style="display: none;">Player <span id="playerXorO"></span>, take your turn.</p> <!--This will appear after the vhoices have been made-->
+	</div>
+  
+  <div class="boardContainer">
+  	<div class="ticTacToeBoard">
+  		<!--Row 1-->
+  		<div class="a1 square" id="0" onclick="mark(this, 0)"></div>
+  		<div class="a2 square" id="1" onclick="mark(this, 1)"></div>
+  		<div class="a3 square" id="2" onclick="mark(this, 2)"></div>
+  		<!--Row 2-->
+  		<div class="b1 square" id="3" onclick="mark(this, 3)"></div>
+  		<div class="b2 square" id="4" onclick="mark(this, 4)"></div>
+  		<div class="b3 square" id="5" onclick="mark(this, 5)"></div>
+  		<!--Row 3-->
+  		<div class="c1 square" id="6" onclick="mark(this, 6)"></div>
+  		<div class="c2 square" id="7" onclick="mark(this, 7)"></div>
+  		<div class="c3 square" id="8" onclick="mark(this, 8)"></div>
+  	</div>
+  </div>
+
+	<div id="restartGameContainer">
+		<button id="restartButton" onclick="resetGame()">Restart</button>
+	</div>
+
+  <div id="movesButtons">
+		<button id="previousButton" onclick="previous()" style="display: none;">Previous</button>
+    <button id="nextButton" onclick="next()" style="display:none;">Next</button>
+	</div>
+
+</body>
+
+</html>

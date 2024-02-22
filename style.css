@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("candara-font-family/Candara.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: bold;
+  src: url("candara-font-family/Candara_Bold.ttf") format("truetype");
+}
+
+body {
+  text-align: center;
+  font-family: Candara;
+  background-image: url("TicTacToeBackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  color: white;
+}
+
+#choosePlayerText {
+  font-size: 24pt;
+  margin: 20px 0 0 0;
+}
+
+h1 {
+  animation: flashing 3s infinite;
+  font-size: 45pt;
+  margin: 0;
+}
+
+@keyframes flashing {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #422c28;
+  }
+  100% {
+    color: #fbbc31;
+  }
+}
+
+@keyframes blink {
+  60% {
+    opacity: 0.5;
+  }
+}
+
+#playerX {
+  border: none;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 25pt;
+  margin: 15px;
+  padding: 15px 20px 15px 20px;
+  border-radius: 5px;
+}
+
+#playerX:hover,
+#playerO:hover,
+#restartButton:hover,
+#previousButton:hover,
+#nextButton:hover {
+  animation: blink 2s infinite;
+  cursor: pointer;
+}
+
+#playerO {
+  border: none;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 25pt;
+  margin: 15px;
+  padding: 15px 20px 15px 20px;
+  border-radius: 5px;
+}
+
+#restartButton {
+  border: none;
+  background-color: orange;
+  color: black;
+  margin: 20px 10px 10px 10px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 10pt;
+  font-family: Candara;
+}
+
+#previousButton,
+#nextButton {
+  border: none;
+  background-color: white;
+  color: orange;
+  margin: 10px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 10pt;
+  font-family: Candara;
+}
+
+#buttonYes,
+#buttonNo {
+  display: inline-flex;
+  border: none;
+  margin: 10px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 13pt;
+  font-family: Candara;
+}
+
+#choosePlayer1buttons {
+  display: inline-flex;
+  margin-bottom: 15px;
+}
+
+#buttonYes {
+  background-color: white;
+  color: black;
+}
+
+#buttonNo {
+  background-color: black;
+  color: white;
+}
+
+#takeTurnText,
+#chooseTurnText {
+  font-size: 25pt;
+}
+
+#chooseTurnText {
+  display: block;
+  margin: 10px;
+  padding: 0;
+}
+
+.boardContainer {
+  display: inline-block;
+  position: relative;
+  height: 50vh;
+  width: 50vh;
+  margin: 0;
+  padding: 0;
+}
+
+.ticTacToeBoard {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "a1 a2 a3"
+    "b1 b2 b3"
+    "c1 c2 c3";
+}
+
+.square:hover {
+  background: white;
+  opacity: 0.7;
+}
+
+.square {
+  color: yellow;
+  font-size: 50pt;
+  display: block;
+}
+
+.a1,
+.b1 {
+  border-top: none;
+  border-right: 3mm solid white;
+  border-bottom: 3mm solid white;
+  border-left: none;
+}
+
+.a2,
+.b2 {
+  border-bottom: 3mm solid white;
+}
+
+.a3,
+.b3 {
+  border-top: none;
+  border-right: none;
+  border-bottom: 3mm solid white;
+  border-left: 3mm solid white;
+}
+
+.c1 {
+  border-right: 3mm solid white;
+  border-bottom: none;
+}
+
+.c3 {
+  border-left: 3mm solid white;
+}
